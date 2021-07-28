@@ -6,6 +6,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 const TransformModulesPlugin = require('webpack-transform-modules-plugin')
 //moment.js 打包局部语言插件
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 const cssLoaders = (preNumber) => [
   // 'vue-style-loader',
@@ -71,6 +72,7 @@ module.exports = {
     new MomentLocalesPlugin({
       localesToKeep: ['ja', 'zh-cn', 'zh-tw'],
     }),
+    new Dotenv(),
   ],
   module: {
     rules: [
